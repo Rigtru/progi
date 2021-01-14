@@ -10,7 +10,20 @@ public class Start {
         int minus = task.indexOf('-');
         int mul = task.indexOf('*');
         int div = task.indexOf('/');
-        if (plus >= 0) {
+        int f = task.indexOf('f');
+        if (f>=0){
+            String [] fibon = task.split("f");
+            int n = Integer.parseInt(fibon[0]);
+            int[] fib = new int[n];
+            fib[0] = 0;
+            fib[1] = 1;
+            for (int i = 2;i < fib.length; ++i){
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            System.out.println(fib[n-1]);
+
+        }
+        else if (plus >= 0) {
             String[] primer = task.split("\\+");
             int a = Integer.parseInt(primer[0]);
             int b = Integer.parseInt(primer[1]);
@@ -39,5 +52,10 @@ public class Start {
 
         }
         System.out.println(result);
+
+
+
+
+
     }
 }
